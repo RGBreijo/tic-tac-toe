@@ -13,18 +13,19 @@
     </div>
 
     <div class="userInputScreenContainer">
-        <form action="">
+
+        <form id="userOptions" action="index.html">
 
             <h2>New Game</h2>
 
             <div class="userName">
                 <label for="playerOneUserSelectedName">Player one name</label>
-                <input type="text" name = "playerOneUserSelectedName" id="playerOneUserSelectedName" maxlength="12">
+                <input type="text" name = "playerOneUserSelectedName" id="playerOneUserSelectedName" maxlength="12" required>
             </div>
 
             <div class="userName">
                 <label for="playerTwoUserSelectedName">Player two name </label>
-                <input type="text" name = "playerTwoUserSelectedName" id="playerTwoUserSelectedName" maxlength="12" >
+                <input type="text" name = "playerTwoUserSelectedName" id="playerTwoUserSelectedName" maxlength="12" required>
             </div>
 
             <div class="playerSymbolContainer">
@@ -34,20 +35,20 @@
                         <p class="oSymbol">O</p>
                     </div>
                     <label for="playerOneUserSelectedSymbol">Player one symbol</label>
-                    <input type="radio" name="playerOneSymbol">
-                    <input type="radio" name="playerOneSymbol">
+                    <input type="radio" name="playerOneSymbol" value="x" class="radioSymbol" id="pOneX" required>
+                    <input type="radio" name="playerOneSymbol" value="o" class="radioSymbol" id="pOneO" required>
                 </div>
 
                 <div>
                         <!-- add an event listener that selects the oppsoite one for the block-->
                     <label for="playerTwoUserSelectedSymbol">Player two symbol</label>
-                    <input type="radio" name="playerTwoSymbol">
-                    <input type="radio" name="playerTwoSymbol">
+                    <input type="radio" name="playerTwoSymbol" value="x" class="radioSymbol" id="pTwoX" required>
+                    <input type="radio" name="playerTwoSymbol" value="o" class="radioSymbol" id="pTwoO" required>
                 </div>
             </div>
 
             <div class="startGameBtnContainer">
-            <button>Start Game</button>
+            <button id="startGameBtn">Start Game</button>
             </div>
 
         </form>
