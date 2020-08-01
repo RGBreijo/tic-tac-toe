@@ -12,12 +12,21 @@
 
     <header>
         <h1>Tic-Tac-Toe</h1>
+
+        <div class="hamburgerIcon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        
         <nav>
             <ul>
                 <li>Restart</li>
                 <li>New Game</li>
             </ul>
         </nav>
+
     </header>
 
 
@@ -28,45 +37,42 @@
             <p><span id="playerOneName">Player One</span>  : <span id="playerOneSymbol">X</span></p>
         </div>
 
-        <div id="Score">
-            <p>Turn</p>
-            <p>X</p>
-        </div>
-
 
         <div id="playerTwoInfo">
             <p><span id="playerTwoName">Player Two</span>  : <span id="playerTwoSymbol">O</span></p>
         </div>
-
+        
     </section>
 
 
-
+    <div class="centerGameBoard">
     <section class="gameBoard">
 
 
         <div id="topRow" class="gameBoardRow">
 
-            <div id="positionOne"></div>
-            <div id="positionTwo"></div>
-            <div id="positionThree"></div>
+            <div id="positionOne">X</div>
+            <div id="positionTwo">O</div>
+            <div id="positionThree">X</div>
         </div>
 
 
         <div id="middleRow" class="gameBoardRow">
-            <div id="positionFour"></div>
-            <div id="positionFive"></div>
-            <div id="positionSix"></div>
+            <div id="positionFour">X</div>
+            <div id="positionFive">O</div>
+            <div id="positionSix">X</div>
         </div>
 
 
         <div id="bottomRow" class="gameBoardRow">
-            <div id="positionSeven"></div>
-            <div id="positionEight"></div>
-            <div id="positionNine"></div>
+            <div id="positionSeven">O</div>
+            <div id="positionEight">X</div>
+            <div id="positionNine">O</div>
         </div>
 
     </section>
+
+    </div>
 
 </div>
 
