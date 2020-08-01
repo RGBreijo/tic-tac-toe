@@ -37,13 +37,46 @@ h1{
 
 ul{
     /* ADD A HAMBURGER ICON HERE */
-    display: none;
+    padding: 0;
     list-style-type: none;
+    font-size: 1.3em;
+    padding: 0 1em;
 }
 
-nav{
-    display: none;
+li:first-child{
+    margin-bottom: 1em;
 }
+
+li{
+    /* To overlfow nav and display smoothly instead of wraping text*/
+    width: 100px;
+}
+
+
+nav{
+
+    overflow: hidden;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+
+    width: 0px;
+    /* width: 150px;  height when hamburger is clicked*/
+    display: flex;
+
+    flex-direction: column;
+    background: #13153c;
+    color: white;
+    transition: width 0.5s;
+
+}
+
+
+
+
 
 
 .hamburgerIcon div{
@@ -51,7 +84,25 @@ nav{
     width: 30px;
     background-color: white;
     margin-bottom: 0.5em;
+    
 }
+
+
+#closeHamburgerBtn{
+    width: 40px;
+    background: none;
+    color: white; 
+    border: none;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* on hover change the with and the display  */
+
+
+
+
 
 
 /* center game board */
