@@ -8,24 +8,31 @@
 </head>
 <body>
 
-    
-    <div>
+    <div class="playerScreenBanner">
+        <h1>Tic-tac-toe</h1>
+    </div>
+
+    <div class="userInputScreenContainer">
         <form action="">
 
-            <h1>New Game</h1>
+            <h2>New Game</h2>
 
-            <div>
+            <div class="userName">
                 <label for="playerOneUserSelectedName">Player One Name</label>
                 <input type="text" name = "playerOneUserSelectedName" id="playerOneUserSelectedName">
             </div>
 
-            <div>
+            <div class="userName">
                 <label for="playerTwoUserSelectedName">Player Two Name</label>
                 <input type="text" name = "playerTwoUserSelectedName" id="playerTwoUserSelectedName">
             </div>
 
-            <div>
+            <div class="playerSymbolContainer">
                 <div>
+                    <div class="playerSymbols">
+                        <p class="xSymbol">X</p>
+                        <p class="oSymbol">O</p>
+                    </div>
                     <label for="playerOneUserSelectedSymbol">Player One Symbol</label>
                     <input type="radio" name="playerOneSymbol">
                     <input type="radio" name="playerOneSymbol">
@@ -39,8 +46,10 @@
                 </div>
             </div>
 
-            
+            <div class="startGameBtnContainer">
             <button>Start Game</button>
+            </div>
+
         </form>
     </div>
 
