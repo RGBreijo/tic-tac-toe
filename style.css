@@ -194,17 +194,19 @@ ul{
 }
 form{
     position: relative;
-    background-color: #caccff;
+    background-color: #3A469C;
     height: 400px;
     width: 100%;
     max-width: 600px;
     padding: 1em;
     border-radius: 5px;
+    border: 1px solid #0E99D7;
+
 }
 
 .userInputScreenContainer h2{
     text-align: center;
-    color: #504848;
+    color: #FBFDFC;
     margin-bottom: 2em;
 }
 
@@ -214,7 +216,7 @@ form{
 
 .playerSymbolContainer{
     margin-top: 3em;
-    max-width: 190px;
+    max-width: 184px; /* for aligining x and y symbols on top of radio */
 }
 
 .playerSymbolContainer div{
@@ -238,6 +240,11 @@ form{
     border-radius: 10px;
     border: none;
     background-color: #6c8af7;
+    
+    color: white;
+}
+
+label{
     color: white;
 }
 
@@ -251,9 +258,30 @@ form{
     margin: 0;
 }
 
+
 .oSymbol{
     padding-left: 1em;
+}
 
+.oSymbol, .xSymbol{
+    color: white;
+}
+
+input[type="radio"]{
+    background-color: blue;
+    border: none;
+}
+
+
+
+
+
+#playerOneUserSelectedName, #playerTwoUserSelectedName{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    margin-left: 0.6em;
 }
 
 
