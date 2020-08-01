@@ -1,20 +1,45 @@
 
-
-
 let playerOneObj; 
 let playerTwoObj; 
+let x = 0; 
 
 
+if(document.querySelector("body").classList.contains("playerScreen"))
+{
+    x = 4; 
+    loadUserScreenPageJs();
+
+}else if (document.querySelector("body").classList.contains("playGameScreen"))
+{   
+    playerOneObj = JSON.parse(localStorage.getItem("playerOne"));
+    playerTwoObj = JSON.parse(localStorage.getItem("playerTwo"));
+
+    if(playerOneObj != null && playerTwoObj != null)
+    {
+        loadPlayGamePageJs();
+    }
+    
+}
 
 
-document.querySelector("#userOptions").addEventListener('submit', retrieveUserInfo);
+function loadUserScreenPageJs()
+{
+    document.querySelector("#userOptions").addEventListener('submit', retrieveUserInfo);
+    radioButtonSetUp();
+}
+
+function loadPlayGamePageJs()
+{
+    changeBoardPlayerNames();
+
+}
+
+
 
 const PlayerFactory = (name, symbol) =>
 {
     return {name, symbol};
 }
-
-radioButtonSetUp();
 
 
 
@@ -97,18 +122,30 @@ function retrieveUserInfo()
 
     if(document.querySelector("#pOneX").checked || document.querySelector("#pTwoO").checked)
     {
-        playerOneSymbol = "x"; 
-        playerTwoSymbol = "o"; 
+        playerOneSymbol = "X"; 
+        playerTwoSymbol = "O"; 
 
     }else if(document.querySelector("#pOneO").checked || document.querySelector("#pTwoX").checked)
     {
-        playerOneSymbol = "o"; 
-        playerTwoSymbol = "x"; 
+        playerOneSymbol = "O"; 
+        playerTwoSymbol = "X"; 
     }
 
     playerOneObj = PlayerFactory(playerOneName, playerOneSymbol);
-    playerTwoObj = PlayerFactor(playerTwoName, playerTwoSymbol);
+    playerTwoObj = PlayerFactory(playerTwoName, playerTwoSymbol);
 
+    localStorage.setItem('playerOne', JSON.stringify(playerOneObj));
+    localStorage.setItem('playerTwo', JSON.stringify(playerTwoObj));
+}
+
+
+function changeBoardPlayerNames()
+{
+    document.querySelector("#playerOneName").textContent = playerOneObj.name;
+    document.querySelector("#playerTwoName").textContent = playerTwoObj.name;
+
+    document.querySelector("#playerOneSymbol").textContent = playerOneObj.symbol;
+    document.querySelector("#playerTwoSymbol").textContent = playerTwoObj.symbol;
 }
 
 
