@@ -6,7 +6,11 @@ body{
 
 
 .container{
-    margin: 0 2em;
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 
@@ -14,11 +18,19 @@ body{
 /* mobile header */
 
 header{
+    padding-top: 1em;
+    margin-bottom: 2em;
     display: flex;
     color: white;
+    /* background-color: blue; */
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
 }
 
 h1{
+    padding: 0;
+    margin: 0;
     font-size: 2.3em;
 }
 
@@ -30,10 +42,85 @@ ul{
 }
 
 nav{
-    display: flex;
+    display: none;
 }
 
+
+.hamburgerIcon div{
+    height: 1px;
+    width: 30px;
+    background-color: white;
+    margin-bottom: 0.5em;
+}
+
+
+/* center game board */
+
+/* .centerGameBoard{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+} */
+
 /* mobile game info  */
+
+.gameInfo{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.gameInfo div:first-child{
+    padding-right: 1.4em;
+}
+
+#playerOneInfo p, #playerTwoInfo p{
+    color: #ADADC1;
+}
+
+#score p{
+    color: white;
+}
+
+#score p:first-child{
+    margin-right: 1em;
+}
+
+
+/* mobile game board */
+
+.gameBoard{
+    background-color: #a4a7ff;
+    height: 300px;
+    width: 300px;
+}
+
+.gameBoardRow{
+  display: flex;
+  height: 100px;
+}
+
+.gameBoardRow div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border: 1px solid black;
+    font-size: 3em;
+}
+
+
+/* identification for current turn */ 
+
+#playerOneInfo p{
+
+    color: white;
+}
+
+
+
 
 
 
