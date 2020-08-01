@@ -173,6 +173,98 @@ ul{
     color: white;
 }
 
+/* - - - - - - - - - player Screen html - - - - - - - - - - - */
+
+
+.userInputScreenContainer{
+    position: absolute;
+
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerScreenBanner{
+    margin-top: 1em;
+    color: white;
+    text-align: center;
+}
+form{
+    position: relative;
+    background-color: #caccff;
+    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.userInputScreenContainer h2{
+    text-align: center;
+    color: #504848;
+    margin-bottom: 2em;
+}
+
+.userName{
+    margin-bottom: 1em;
+}
+
+.playerSymbolContainer{
+    margin-top: 3em;
+    max-width: 190px;
+}
+
+.playerSymbolContainer div{
+    margin-bottom: 1em;
+}
+
+.startGameBtnContainer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 1em;
+
+    display: flex; 
+    justify-content: center;
+}
+
+.startGameBtnContainer button{
+    font-size: 1.1em;
+    padding: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: #6c8af7;
+    color: white;
+}
+
+.playerSymbols{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.3em;
+}
+
+.playerSymbols p{
+    margin: 0;
+}
+
+.oSymbol{
+    padding-left: 1em;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (min-width: 500px)
 {
@@ -191,6 +283,10 @@ ul{
     .desktopNav ul li:first-child{
         margin-right: 1.3em;
     }
+
+
+    /* - - - - - - - - - player Screen html - - - - - - - - - - - */
+
 }
 
 @media only screen and (min-width: 900px)
@@ -198,6 +294,9 @@ ul{
     .gameBoardRow div:hover{
         background: #878af3;
     }
+
+
+    /* - - - - - - - - - player Screen html - - - - - - - - - - - */
 
 }
 
