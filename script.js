@@ -1,3 +1,5 @@
+let turnColorIndicator = "white";
+let notTurnColorIndicator = "rgb(173, 173, 193)";
 
 let playerOneObj; 
 let playerTwoObj; 
@@ -16,10 +18,18 @@ if(document.querySelector("body").classList.contains("playerScreen"))
 
     if(playerOneObj != null && playerTwoObj != null)
     {
+        setStartingTurn();
         loadPlayGamePageJs();
+        setGameBoardBlocks();
+    }else
+    {
+        // display a msg or redirect the user to login page 
     }
     
 }
+
+
+
 
 
 function loadUserScreenPageJs()
@@ -139,6 +149,17 @@ function retrieveUserInfo()
 }
 
 
+
+///////////////////////////////// play game screen section /////////////////////////////////
+
+function setStartingTurn()
+{
+
+    document.querySelector("#playerOneInfo").firstElementChild.style.color = turnColorIndicator;
+    document.querySelector("#playerTwoInfo").firstElementChild.style.color = notTurnColorIndicator;
+}
+
+
 function changeBoardPlayerNames()
 {
     document.querySelector("#playerOneName").textContent = playerOneObj.name;
@@ -147,6 +168,43 @@ function changeBoardPlayerNames()
     document.querySelector("#playerOneSymbol").textContent = playerOneObj.symbol;
     document.querySelector("#playerTwoSymbol").textContent = playerTwoObj.symbol;
 }
+
+
+function setGameBoardBlocks()
+{
+    let gameBlocks = Array.from(document.querySelectorAll(".boardPosition"));
+
+    for(let i = 0; i < gameBlocks.length; i++)
+    {
+        gameBlocks[i].addEventListener('click', addSymbolInBlock);
+    }
+}
+
+function addSymbolInBlock(e)
+{
+    let event = e || window.event;  
+    let target = e.target || e.srcElement;
+
+    if (target.textContent === "")
+    {
+        if(document.querySelector("#playerOneInfo").firstElementChild.style.color === turnColorIndicator)
+        {
+            target.textContent = playerOneObj.symbol;
+            document.querySelector("#playerOneInfo").firstElementChild.style.color = notTurnColorIndicator; 
+            document.querySelector("#playerTwoInfo").firstElementChild.style.color = turnColorIndicator;
+        }else
+        {
+            target.textContent = playerTwoObj.symbol;
+            document.querySelector("#playerOneInfo").firstElementChild.style.color = turnColorIndicator; 
+            document.querySelector("#playerTwoInfo").firstElementChild.style.color = notTurnColorIndicator;
+        }
+    }
+}
+
+
+
+
+
 
 
 
