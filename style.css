@@ -35,6 +35,10 @@ h1{
     font-size: 2.3em;
 }
 
+.desktopNav{
+    display: none;
+}
+
 
 ul{
     /* ADD A HAMBURGER ICON HERE */
@@ -44,17 +48,17 @@ ul{
     padding: 0 1em;
 }
 
-li:first-child{
+.mobileNav li:first-child{
     margin-bottom: 1em;
 }
 
-li{
+.mobileNav li{
     /* To overlfow nav and display smoothly instead of wraping text*/
     width: 100px;
 }
 
 
-nav{
+.mobileNav{
 
     overflow: hidden;
 
@@ -74,9 +78,6 @@ nav{
     transition: width 0.5s;
 
 }
-
-
-
 
 
 
@@ -171,3 +172,32 @@ nav{
 
     color: white;
 }
+
+
+@media only screen and (min-width: 500px)
+{
+    .hamburgerIcon{
+        display: none;
+    }
+
+    .desktopNav{
+        display: block;
+    }
+
+    .desktopNav ul li{
+        display: inline;
+    }
+
+    .desktopNav ul li:first-child{
+        margin-right: 1.3em;
+    }
+}
+
+@media only screen and (min-width: 900px)
+{
+    .gameBoardRow div:hover{
+        background: #878af3;
+    }
+
+}
+
