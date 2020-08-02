@@ -381,6 +381,7 @@ function checkWin()
 function playerWon(symbol)
 {
     document.querySelector(".youWonContainer").style.display = "flex";
+    document.querySelector(".winStatus").textContent = "Won!"
 
     if(playerOneObj.symbol === symbol)
     {
