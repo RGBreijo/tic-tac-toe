@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic-tic-toe</title>
+</head>
+<body class="playGameScreen">
+    
+    <div class="container">
+
+    <header>
+        <h1>Tic-Tac-Toe</h1>
+
+        <div class="hamburgerIcon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <nav class="desktopNav">
+            <ul>
+                <li class="restartNav"><a href="#.html">Restart</a></li>
+                <li class="newGameNav"><a href="playerScreen.html">New Game</a></li>
+            </ul>
+        </nav>
+
+        
+        <nav class="mobileNav">
+            <button id="closeHamburgerBtn">X</button>
+
+            <ul>
+                <li class="restartNav"><a href="#.html">Restart</a></li>
+                <li class="newGameNav"><a href="playerScreen.html">New Game</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <section class="gameInfo">
+
+        <div id="playerOneInfo">
+            <p><span id="playerOneName">Player One</span>  : <span id="playerOneSymbol">X</span></p>
+        </div>
+
+
+        <div id="playerTwoInfo">
+            <p><span id="playerTwoName">Player Two</span>  : <span id="playerTwoSymbol">O</span></p>
+        </div>
+        
+    </section>
+
+
+    <div class="centerGameBoard">
+    <section class="gameBoard">
+
+
+        <div id="topRow" class="gameBoardRow">
+
+            <div id="positionOne" class="boardPosition"></div>
+            <div id="positionTwo" class="boardPosition"></div>
+            <div id="positionThree" class="boardPosition"></div>
+        </div>
+
+
+        <div id="middleRow" class="gameBoardRow">
+            <div id="positionFour" class="boardPosition"></div>
+            <div id="positionFive" class="boardPosition"></div>
+            <div id="positionSix" class="boardPosition"></div>
+        </div>
+
+
+        <div id="bottomRow" class="gameBoardRow">
+            <div id="positionSeven" class="boardPosition"></div>
+            <div id="positionEight" class="boardPosition"></div>
+            <div id="positionNine" class="boardPosition"></div>
+        </div>
+
+    </section>
+
+    </div>
+
+</div>
+
+
+<div class="youWonContainer">
+
+    <div class="youWonContent">
+        <p class="playerName"></p>
+        <p class="winStatus">Won!</p>
+
+        <div class="youWonOptions">
+            <button id="youWonRestartGameBtn">Restart</button>
+            <button id="youWonNewGameBtn">New Game</button>
+        </div>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

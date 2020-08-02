@@ -4,100 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Tic-tic-toe</title>
+    <title>Tic-tac-toe</title>
 </head>
-<body class="playGameScreen">
-    
-    <div class="container">
+<body class="playerScreen">
 
-    <header>
-        <h1>Tic-Tac-Toe</h1>
-
-        <div class="hamburgerIcon">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        
-        <nav class="desktopNav">
-            <ul>
-                <li class="restartNav"><a href="#.html">Restart</a></li>
-                <li class="newGameNav"><a href="playerScreen.html">New Game</a></li>
-            </ul>
-        </nav>
-
-        
-        <nav class="mobileNav">
-            <button id="closeHamburgerBtn">X</button>
-
-            <ul>
-                <li class="restartNav"><a href="#.html">Restart</a></li>
-                <li class="newGameNav"><a href="playerScreen.html">New Game</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
-
-
-    <section class="gameInfo">
-
-        <div id="playerOneInfo">
-            <p><span id="playerOneName">Player One</span>  : <span id="playerOneSymbol">X</span></p>
-        </div>
-
-
-        <div id="playerTwoInfo">
-            <p><span id="playerTwoName">Player Two</span>  : <span id="playerTwoSymbol">O</span></p>
-        </div>
-        
-    </section>
-
-
-    <div class="centerGameBoard">
-    <section class="gameBoard">
-
-
-        <div id="topRow" class="gameBoardRow">
-
-            <div id="positionOne" class="boardPosition"></div>
-            <div id="positionTwo" class="boardPosition"></div>
-            <div id="positionThree" class="boardPosition"></div>
-        </div>
-
-
-        <div id="middleRow" class="gameBoardRow">
-            <div id="positionFour" class="boardPosition"></div>
-            <div id="positionFive" class="boardPosition"></div>
-            <div id="positionSix" class="boardPosition"></div>
-        </div>
-
-
-        <div id="bottomRow" class="gameBoardRow">
-            <div id="positionSeven" class="boardPosition"></div>
-            <div id="positionEight" class="boardPosition"></div>
-            <div id="positionNine" class="boardPosition"></div>
-        </div>
-
-    </section>
-
+    <div class="playerScreenBanner">
+        <h1>Tic-tac-toe</h1>
     </div>
 
-</div>
+    <div class="userInputScreenContainer">
 
+        <form id="userOptions" action="index.html">
 
-<div class="youWonContainer">
+            <h2>New Game</h2>
 
-    <div class="youWonContent">
-        <p class="playerName"></p>
-        <p class="winStatus">Won!</p>
+            <div class="userName">
+                <label for="playerOneUserSelectedName">Player one name</label>
+                <input type="text" name = "playerOneUserSelectedName" id="playerOneUserSelectedName" maxlength="12" required>
+            </div>
 
-        <div class="youWonOptions">
-            <button id="youWonRestartGameBtn">Restart</button>
-            <button id="youWonNewGameBtn">New Game</button>
-        </div>
+            <div class="userName">
+                <label for="playerTwoUserSelectedName">Player two name </label>
+                <input type="text" name = "playerTwoUserSelectedName" id="playerTwoUserSelectedName" maxlength="12" required>
+            </div>
+
+            <div class="playerSymbolContainer">
+                <div>
+                    <div class="playerSymbols">
+                        <p class="xSymbol">X</p>
+                        <p class="oSymbol">O</p>
+                    </div>
+                    <label for="playerOneUserSelectedSymbol">Player one symbol</label>
+                    <input type="radio" name="playerOneSymbol" value="x" class="radioSymbol" id="pOneX" required>
+                    <input type="radio" name="playerOneSymbol" value="o" class="radioSymbol" id="pOneO" required>
+                </div>
+
+                <div>
+                        <!-- add an event listener that selects the oppsoite one for the block-->
+                    <label for="playerTwoUserSelectedSymbol">Player two symbol</label>
+                    <input type="radio" name="playerTwoSymbol" value="x" class="radioSymbol" id="pTwoX" required>
+                    <input type="radio" name="playerTwoSymbol" value="o" class="radioSymbol" id="pTwoO" required>
+                </div>
+            </div>
+
+            <div class="startGameBtnContainer">
+            <button id="startGameBtn">Start Game</button>
+            </div>
+
+        </form>
     </div>
-</div>
+
+
 
 
     <script src="script.js"></script>
