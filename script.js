@@ -418,6 +418,10 @@ function resetGameBoard()
 function setPlayerWonOptionBtn()
 {
     document.querySelector("#youWonRestartGameBtn").addEventListener("click", resetGameBoard);
+    document.querySelector("#youWonNewGameBtn").addEventListener("click", function(){
+        window.open("playerScreen.html", "_self");
+    });
+
 }
 
 
