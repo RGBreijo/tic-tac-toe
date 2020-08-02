@@ -1,5 +1,8 @@
 let turnColorIndicator = "white";
 let notTurnColorIndicator = "rgb(173, 173, 193)";
+let boardStatus = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+let winningPositions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]];
+
 
 let playerOneObj; 
 let playerTwoObj; 
@@ -27,8 +30,6 @@ if(document.querySelector("body").classList.contains("playerScreen"))
     }
     
 }
-
-
 
 
 
@@ -192,14 +193,87 @@ function addSymbolInBlock(e)
             target.textContent = playerOneObj.symbol;
             document.querySelector("#playerOneInfo").firstElementChild.style.color = notTurnColorIndicator; 
             document.querySelector("#playerTwoInfo").firstElementChild.style.color = turnColorIndicator;
+            addSymbolInArray(target.id, playerOneObj.symbol);
+
         }else
         {
             target.textContent = playerTwoObj.symbol;
             document.querySelector("#playerOneInfo").firstElementChild.style.color = turnColorIndicator; 
             document.querySelector("#playerTwoInfo").firstElementChild.style.color = notTurnColorIndicator;
+            addSymbolInArray(target.id, playerTwoObj.symbol);
+
         }
     }
+    checkWin();
 }
+
+function addSymbolInArray(blockId, symbol)
+{   
+    let numberSymbol = 0; 
+
+
+    if (symbol == "X")
+    {
+        numberSymbol = 1;  
+    }else
+    {
+        numberSymbol = 2; 
+    }
+
+    // ID : Array Position 
+    let boardPositionTranslation = 
+    {
+        "positionOne":    0, 
+        "positionTwo":    1, 
+        "positionThree":  2, 
+        "positionFour":   3, 
+        "positionFive":   4, 
+        "positionSix":    5, 
+        "positionSeven":  6, 
+        "positionEight":  7, 
+        "positionNine":   8, 
+    };
+    boardStatus[boardPositionTranslation[blockId]] = numberSymbol;
+}
+
+function resetGameBoard()
+{
+
+}
+
+
+
+function checkWin()
+{
+    let currentSymbol = 0; 
+    const winingNumber = 3; 
+    let won = false; 
+    let xSymbol = 1; 
+    let oSymbol = 2; 
+
+    // O(1)
+
+    for(let boardOriantation = 0; boardOriantation <  winningPositions.length; boardOriantation++)
+    {
+        let positionOne = winningPositions[boardOriantation][0];
+        let positionTwo = winningPositions[boardOriantation][1];
+        let positionThree = winningPositions[boardOriantation][2];
+
+        if (boardStatus[positionOne] != 0)
+        {
+            if(boardStatus[positionOne] == boardStatus[positionTwo] &&  boardStatus[positionTwo] == boardStatus[positionThree])
+            {
+                won = true; 
+            }
+        }
+    }
+
+
+    // Call the thing to stop the game 
+    console.log(won);
+}
+
+
 
 
 
