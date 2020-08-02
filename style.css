@@ -54,7 +54,7 @@ ul{
 
 .mobileNav li{
     /* To overlfow nav and display smoothly instead of wraping text*/
-    width: 100px;
+    width: 120px;
 }
 
 

@@ -57,6 +57,7 @@ function loadPlayGamePageJs()
     changeBoardPlayerNames();
     setGameBoardBlocks();
     setPlayerWonOptionBtn();
+    setMobileNavBar();
 
 }
 
@@ -209,6 +210,15 @@ function changeBoardPlayerNames()
 }
 
 
+function setMobileNavBar()
+{
+
+    document.querySelector(".hamburgerIcon").addEventListener('click', openMobileNavBar);
+    document.querySelector("#closeHamburgerBtn").addEventListener('click', closeMobileNavBar);
+}
+
+
+
 
 
 /**
@@ -257,6 +267,17 @@ function addSymbolInBlock(e)
     }
 }
 
+
+function openMobileNavBar()
+{
+    document.querySelector(".mobileNav").style.width = "150px";
+}
+
+
+function closeMobileNavBar()
+{
+    document.querySelector(".mobileNav").style.width = "0px";
+}
 
 
 
