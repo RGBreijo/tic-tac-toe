@@ -100,6 +100,24 @@ ul{
     margin-bottom: 0.5em;
 }
 
+
+.newGameNav a{
+    text-decoration: none;
+    color: white;
+}
+
+.newGameNav a:hover{
+    text-decoration: none;
+    color: #bbb5b5;
+}
+
+.restartNav a{
+    color: white;
+    text-decoration: none;
+}
+.restartNav a:hover{
+    color: #bbb5b5;
+}
 /* on hover change the with and the display  */
 
 
@@ -223,6 +241,7 @@ ul{
     color: white;
     background-color: #6C8AF7;
 }
+
 
 
 
