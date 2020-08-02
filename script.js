@@ -57,6 +57,7 @@ function loadPlayGamePageJs()
     changeBoardPlayerNames();
     setGameBoardBlocks();
     setPlayerWonOptionBtn();
+    setRestartNav();
     setMobileNavBar();
 
 }
@@ -232,6 +233,20 @@ function setGameBoardBlocks()
     {
         gameBlocks[i].addEventListener('click', addSymbolInBlock);
     }
+}
+
+/*
+    sets the restart navigation to restart the game 
+*/
+function setRestartNav()
+{
+    let restartNavs = Array.from(document.querySelectorAll(".restartNav"));
+
+    for(let i = 0; i < restartNavs.length; i++)
+    {
+        restartNavs[i].addEventListener("click", resetGameBoard);
+    }
+
 }
 
 
@@ -412,7 +427,10 @@ function tie()
  */
 function resetGameBoard()
 {
+    filledPositionsCounter = 0;
+    
     let boardBlocks = Array.from(document.querySelectorAll(".boardPosition"));
+ 
 
 
     // Reset board array internal representation 
@@ -432,6 +450,8 @@ function resetGameBoard()
     document.querySelector("#playerOneInfo").firstElementChild.style.color = playerTurnColorIndicator;
     document.querySelector("#playerTwoInfo").firstElementChild.style.color = playerNotTurnColorIndicator;
 }
+
+
 
 
 /**
